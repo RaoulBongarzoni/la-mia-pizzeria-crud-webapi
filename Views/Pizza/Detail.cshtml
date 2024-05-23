@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model Pizza;
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card text-center">
+                <h1>
+                    @Model.Name
+                </h1>
+                <h4>
+                    @Model.Description
+                </h4>
+                <h5>
+                    € @Model.Price
+                </h5>
+                <strong>categoria:</strong>
+                @if (Model.Category != null)
+                {
+                    @Model.Category.Name
+                }
+                else
+                {
+                    <span>Nessuna categoria</span>
+                }
+                </p>
+
+                @foreach (Ingredient element in Model.Ingredients)
+                {
+                    <div>
+                        <label>
+                            @element.Name
+                        </label>
+                    </div>
+                }
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
